@@ -1,0 +1,121 @@
+/* ========================================
+   ОБЩИЕ СТИЛИ
+   ======================================== */
+body {
+    font-family: sans-serif;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+
+/* ========================================
+   ЗАДАЧА 1: Padding vs Margin
+   ----------------------------------------
+   ВОПРОС: глядя на код ниже, скажи —
+   у какой коробки текст «прижат» к рамке,
+   а у какой текст «дышит» внутри?
+   А у какой будет большое расстояние ДО следующего элемента?
+   ======================================== */
+.task1-container {
+    background-color: #ddd;
+}
+
+.task1-a {
+    background-color: lightblue;
+    border: 2px solid blue;
+    padding: 30px;        /* большой внутренний отступ */
+}
+
+.task1-b {
+    background-color: lightcoral;
+    border: 2px solid red;
+    margin: 30px;         /* большой внешний отступ */
+}
+
+
+/* ========================================
+   ЗАДАЧА 2: Реальный размер коробки
+   ----------------------------------------
+   ВОПРОС: посчитай реальную ширину коробки.
+   width: 200px + padding: 20px (с каждой стороны)
+                + border: 5px (с каждой стороны)
+   Реальная ширина = ?
+   ======================================== */
+.task2 {
+    width: 200px;
+    height: 100px;
+    padding: 20px;
+    border: 5px solid green;
+    background-color: lightyellow;
+}
+
+
+/* ========================================
+   ЗАДАЧА 3: content-box vs border-box
+   ----------------------------------------
+   ВОПРОС: открой страницу в браузере.
+   Какая из двух коробок ШИРЕ на экране?
+   Почему?
+   ======================================== */
+.task3-content-box {
+    box-sizing: content-box;  /* по умолчанию */
+    width: 300px;
+    padding: 20px;
+    border: 5px solid purple;
+    background-color: lavender;
+    margin-bottom: 20px;
+}
+
+.task3-border-box {
+    box-sizing: border-box;   /* альтернативный */
+    width: 300px;
+    padding: 20px;
+    border: 5px solid darkorange;
+    background-color: peachpuff;
+}
+
+
+/* ========================================
+   ЗАДАЧА 4: Центрирование
+   ----------------------------------------
+   ВОПРОС: почему margin: 0 auto центрирует?
+   Что было бы, если бы НЕ было max-width?
+   ======================================== */
+.task4 {
+    max-width: 300px;
+    margin: 0 auto;          /* магия центрирования */
+    padding: 20px;
+    background-color: lightgreen;
+    border: 2px dashed green;
+    text-align: center;
+}
+
+
+/* ========================================
+   ЗАДАЧА 5: Сделай карточку САМА!
+   ----------------------------------------
+   Раскомментируй блок ниже и напиши свои стили.
+   Требования:
+   - padding внутри карточки (чтобы текст «дышал»)
+   - border ИЛИ box-shadow (рамка или тень)
+   - border-radius (закруглённые углы)
+   - background-color (фон)
+   - max-width: 400px и margin: 0 auto (центрирование)
+
+   Подсказка для тени: box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+   ======================================== */
+
+.task5-card {
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    border-radius:  4px;
+    background-color: wheat;
+    max-width: 400px;
+    margin: 0 auto; 
+}
