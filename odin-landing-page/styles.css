@@ -1,0 +1,239 @@
+/* ========================================
+   CSS RESET (минимальный)
+   Убираем дефолтные margin/padding браузера,
+   включаем border-box для всех элементов.
+   ======================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Чтобы изображения не вылезали за контейнер */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Убираем точки у списков */
+ul {
+    list-style: none;
+}
+
+/* Убираем подчёркивание ссылок (по дизайну Odin) */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* ========================================
+   CSS-ПЕРЕМЕННЫЕ (палитра Odin)
+   Использовать через var(--dark-bg) и т.д.
+   ======================================== */
+:root {
+    /* Цвета */
+    --dark-bg: #1F2937;        /* тёмный фон (header, footer) */
+    --light-text: #F9FAF8;     /* светлый текст на тёмном */
+    --gray-text: #E5E7EB;      /* серый текст на тёмном */
+    --accent: #3882F6;         /* акцентный синий (кнопки, CTA) */
+    --dark-text: #1F2937;      /* тёмный текст на светлом */
+    --gray-bg: #E5E7EB;        /* светло-серый фон (для quote) */
+
+    /* Размеры шрифтов */
+    --fs-hero: 48px;
+    --fs-section-title: 36px;
+    --fs-body: 18px;
+    --fs-small: 16px;
+
+    /* Контейнер */
+    --container-max: 1100px;
+    --container-padding: 100px;
+}
+
+
+/* ========================================
+   БАЗОВЫЕ СТИЛИ
+   ======================================== */
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: var(--fs-body);
+    color: var(--dark-text);
+    line-height: 1.4;
+}
+
+
+/* ========================================
+   КНОПКИ
+   ======================================== */
+.btn {
+    background-color: var(--accent);
+    color: var(--light-text);
+    border: none;
+    padding: 8px 32px;
+    border-radius: 8px;
+    font-size: var(--fs-body);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-outline {
+    border: 2px solid var(--light-text);
+}
+
+.hero {
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    padding: 20px var(--container-padding) 100px;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 16px;
+}
+
+.hero-content {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    margin-top: 80px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-text h1 {
+    font-size: var(--fs-hero); 
+    font-weight: 900;
+}
+
+.hero-text p {
+    color: var(--gray-text);
+    margin: 16px 0;
+}
+
+.hero-image {
+   flex: 1; background-color: #6D747C; 
+   height: 250px; 
+   text-align: center; 
+   padding: 100px 0; 
+   color: var(--gray-text);
+}
+
+/* ========================================
+   2. INFORMATION
+   ======================================== */
+.information {
+    padding: 50px var(--container-padding);
+}
+
+.information h2 {
+    font-size: var(--fs-section-title);
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.cards {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 180px;
+}
+
+.card-image {
+    width: 100%;
+    height: 180px;
+    background-color: var(--gray-bg);
+    border: 4px solid var(--accent);
+    border-radius: 16px;
+}
+
+.card p {
+    text-align: center;
+    margin-top: 10px;
+    color: #666;
+}
+
+
+/* ========================================
+   3. QUOTE
+   ======================================== */
+.quote {
+    background-color: var(--gray-bg);
+    padding: 100px var(--container-padding);
+}
+
+.quote blockquote {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: var(--fs-section-title);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--dark-text);
+}
+
+.quote-author {
+    max-width: 800px;
+    margin: 16px auto 0;
+    text-align: right;
+    font-weight: bold;
+}
+
+/* ========================================
+   4. CALL TO ACTION (CTA)
+   ======================================== */
+.cta {
+    padding: 100px var(--container-padding);
+}
+
+.cta-box {
+    background-color: var(--accent);
+    color: var(--light-text);
+    padding: 50px 100px;
+    border-radius: 8px;
+    max-width: var(--container-max);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+.cta-text h3 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.cta-text p {
+    color: var(--gray-text);
+}
+
+
+/* ========================================
+   5. FOOTER
+   ======================================== */
+.footer {
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    padding: 30px var(--container-padding);
+    text-align: center;
+}
