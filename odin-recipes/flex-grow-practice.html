@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Тренировка flex-grow / shrink / basis</title>
+    <link rel="stylesheet" href="flex-grow-practice.css">
+</head>
+<body>
+    <h1>Flex: grow / shrink / basis 📏</h1>
+    <p class="hint">Открой DevTools и посмотри реальные размеры каждого элемента!</p>
+
+    <!-- ===== ПРИМЕР 1: flex: 1 для всех — равные колонки ===== -->
+    <h2>Пример 1: flex: 1 — все равные колонки</h2>
+    <p>Каждому элементу <code>flex: 1</code>. Все одинаковые, делят контейнер поровну.</p>
+    <div class="container">
+        <div class="item ex1">A</div>
+        <div class="item ex1">B</div>
+        <div class="item ex1">C</div>
+    </div>
+
+    <!-- ===== ПРИМЕР 2: разные пропорции через flex-grow ===== -->
+    <h2>Пример 2: flex-grow 1 : 2 : 1</h2>
+    <p>Центральный элемент в 2 раза шире боковых.</p>
+    <div class="container">
+        <div class="item ex2-side">flex: 1</div>
+        <div class="item ex2-center">flex: 2 (в 2 раза шире!)</div>
+        <div class="item ex2-side">flex: 1</div>
+    </div>
+
+    <!-- ===== ПРИМЕР 3: flex-shrink: 0 — кто не сжимается ===== -->
+    <h2>Пример 3: flex-shrink: 0 — логотип не сжимается</h2>
+    <p>Уменьшай ширину окна — логотип останется 200px, а текст сожмётся.</p>
+    <div class="container">
+        <div class="item ex3-logo">Я ЛОГОТИП (не сжимаюсь)</div>
+        <div class="item ex3-text">Я гибкий текст, могу сжаться сколько угодно. Уменьшай окно и смотри!</div>
+    </div>
+
+    <!-- ===== ПРИМЕР 4: flex-basis — стартовый размер ===== -->
+    <h2>Пример 4: flex-basis — стартовая ширина</h2>
+    <p>Левый элемент стартует с 100px, центральный — с 300px, правый — с 100px. Все могут расти (grow: 1).</p>
+    <div class="container">
+        <div class="item ex4-narrow">basis: 100px</div>
+        <div class="item ex4-wide">basis: 300px</div>
+        <div class="item ex4-narrow">basis: 100px</div>
+    </div>
+
+    <!-- ===== ПРИМЕР 5: flex: 1 VS flex: auto — главное отличие! ===== -->
+    <h2>Пример 5: flex: 1 vs flex: auto</h2>
+    <p><strong>Содержимое разной длины</strong>, но flex одинаковый. Смотри, как ведёт себя контент!</p>
+
+    <h3>Сверху: flex: 1 (basis=0, контент игнорируется)</h3>
+    <div class="container">
+        <div class="item ex5-flex-1">A</div>
+        <div class="item ex5-flex-1">Очень длинный текст в этом элементе B</div>
+        <div class="item ex5-flex-1">C</div>
+    </div>
+
+    <h3>Снизу: flex: auto (basis=auto, контент учитывается)</h3>
+    <div class="container">
+        <div class="item ex5-flex-auto">A</div>
+        <div class="item ex5-flex-auto">Очень длинный текст в этом элементе B</div>
+        <div class="item ex5-flex-auto">C</div>
+    </div>
+</body>
+</html>

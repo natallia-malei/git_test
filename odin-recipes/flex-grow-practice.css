@@ -1,0 +1,137 @@
+/* ========================================
+   ОБЩИЕ СТИЛИ
+   ======================================== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+h3 {
+    color: #666;
+    margin-top: 16px;
+    margin-bottom: 4px;
+}
+
+.hint {
+    background-color: #fff8dc;
+    padding: 10px;
+    border-left: 4px solid #f0c040;
+    border-radius: 4px;
+}
+
+code {
+    background-color: #eee;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: monospace;
+}
+
+/* Контейнер для всех примеров */
+.container {
+    display: flex;
+    gap: 8px;
+    padding: 8px;
+    background-color: #ddd;
+    border: 2px dashed #999;
+    margin-bottom: 24px;
+}
+
+/* Общий стиль для элементов */
+.item {
+    padding: 20px;
+    background-color: #4a90e2;
+    color: white;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+/* ========================================
+   ПРИМЕР 1: flex: 1 для всех — равные колонки
+   ----------------------------------------
+   Все элементы делят пространство поровну.
+   ======================================== */
+.ex1 {
+    flex: 1;
+}
+
+
+/* ========================================
+   ПРИМЕР 2: разные пропорции через flex-grow
+   ----------------------------------------
+   Боковые: flex: 1
+   Центр:   flex: 2 (в 2 раза шире)
+   ======================================== */
+.ex2-side {
+    flex: 1;
+}
+
+.ex2-center {
+    flex: 2;
+    background-color: #d35400;  /* выделим другим цветом */
+}
+
+
+/* ========================================
+   ПРИМЕР 3: flex-shrink: 0 — логотип не сжимается
+   ----------------------------------------
+   У логотипа фиксированная ширина и flex-shrink: 0.
+   Текст рядом — гибкий, сожмётся.
+   ======================================== */
+.ex3-logo {
+    width: 200px;
+    flex-shrink: 0;             /* не сжимается! */
+    background-color: #27ae60;
+}
+
+.ex3-text {
+    flex: 1;                     /* занимает оставшееся, может сжиматься */
+}
+
+
+/* ========================================
+   ПРИМЕР 4: flex-basis — стартовый размер
+   ----------------------------------------
+   Все могут расти (grow: 1), но стартуют с разных размеров.
+   Это влияет на финальные пропорции.
+   ======================================== */
+.ex4-narrow {
+    flex-grow: 1;
+    flex-basis: 100px;          /* стартовый размер 100px */
+}
+
+.ex4-wide {
+    flex-grow: 1;
+    flex-basis: 300px;          /* стартовый размер 300px */
+    background-color: #8e44ad;
+}
+
+
+/* ========================================
+   ПРИМЕР 5: flex: 1 vs flex: auto
+   ----------------------------------------
+   КЛЮЧЕВОЕ отличие двух самых популярных сокращений!
+
+   flex: 1     = flex-grow:1, flex-shrink:1, flex-basis: 0    (контент игнорируется)
+   flex: auto  = flex-grow:1, flex-shrink:1, flex-basis: auto (контент учитывается)
+   ======================================== */
+.ex5-flex-1 {
+    flex: 1;                     /* basis=0 — все колонки одинаковые! */
+}
+
+.ex5-flex-auto {
+    flex: auto;                  /* basis=auto — длинный текст занимает больше места */
+    background-color: #c0392b;
+}
