@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissors</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #f4f4f4;
+            text-align: center;
+        }
+        h1 { color: #333; }
+        button {
+            background: #3882F6;
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover { background: #1F60D8; }
+        .hint {
+            background: #fff8dc;
+            border-left: 4px solid #f0c040;
+            padding: 12px;
+            margin: 20px 0;
+            border-radius: 4px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>🪨 📄 ✂️ Rock Paper Scissors</h1>
+
+    <div class="hint">
+        <strong>Как играть:</strong>
+        <ol>
+            <li>Открой DevTools (F12 или Cmd+Option+I) и перейди во вкладку <strong>Console</strong></li>
+            <li>Нажми «Играть» - откроется prompt с выбором</li>
+            <li>Введи: rock, paper или scissors (можно ROCK, RoCk и т.д.)</li>
+            <li>Так 5 раз - в конце увидишь итог</li>
+        </ol>
+    </div>
+
+    <button id="playBtn">Играть!</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
