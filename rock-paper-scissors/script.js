@@ -51,17 +51,13 @@ function playGame() {
 
   for (let i = 1; i <= 5; i++) {
     console.log(`--- Round ${i} ---`);
-
     const humanChoice = getHumanChoice();
     if (humanChoice === null) {
       console.log("Игра отменена");
       return;
     }
-
     const computerChoice = getComputerChoice();
-
     playRound(humanChoice, computerChoice);
-    // playRound сам выводит сообщение и обновляет счёт
   }
 
   console.log("--- Final Score ---");
