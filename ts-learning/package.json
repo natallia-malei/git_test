@@ -1,0 +1,17 @@
+{
+  "name": "ts-learning",
+  "version": "1.0.0",
+  "description": "TypeScript learning - studying from w3schools",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.5.0",
+    "globals": "^17.6.0",
+    "jiti": "^2.7.0",
+    "typescript": "^5.4.0",
+    "typescript-eslint": "^8.61.1"
+  }
+}
